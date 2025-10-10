@@ -1,5 +1,4 @@
 ---
-import Navbar from '../components/Navbar.astro';
 import background from '../assets/background.svg';
 ---
 
@@ -13,7 +12,6 @@ import background from '../assets/background.svg';
 		<meta name="generator" content={Astro.generator} />
 		<title>Ryan's Website</title>
 	</head>
-	<Navbar />
 
 	<!-- <SplitText text="Welcome to my website!" tag="h1" className="text-2xl font-semibold text-center" delay={100} duration={0.6} ease="power3.out" splitType="chars" from={{ opacity: 0, y: 40 }} to={{ opacity: 1, y: 0 }} threshold={0.1} rootMargin="-100px" textAlign="center"></SplitText> -->
 	<img id="background" src={background.src} alt="" fetchpriority="high" />
@@ -26,9 +24,13 @@ import background from '../assets/background.svg';
 <style>
 	html,
 	body {
-		margin: 0;
-		width: 100%;
+		margin: 0 auto;
+		width: min(100% - 2rem, 1200px);
 		height: 100%;
+		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 	#background {
 		position: absolute;

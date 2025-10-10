@@ -1,53 +1,68 @@
 ---
+import CardNav from "./react/CardNav/CardNav.jsx";
+
+const Items = [
+    {
+        label: "Home",
+        bgColor: "#0D0716",
+        textColor: "#fff",
+        links: [
+            { label: "Home", ariaLabel: "Home", href: "/" },
+            { label: "About", ariaLabel: "About", href: "/about" },
+            { label: "Projects", ariaLabel: "Projects", href: "/projects" },
+        ],
+    },
+    // {
+    //     label: "Projects",
+    //     bgColor: "#170D27",
+    //     textColor: "#fff",
+    //     //   links: [
+    //     //     { label: "Featured", ariaLabel: "Featured Projects" },
+    //     //     { label: "Case Studies", ariaLabel: "Project Case Studies" }
+    //     //   ]
+    // },
+    // {
+    //     label: "Contact",
+    //     bgColor: "#271E37",
+    //     textColor: "#fff",
+    //     links: [
+    //         {
+    //             label: "Email",
+    //             ariaLabel: "Email me",
+    //             href: "mailto:ryankim.dev@gmail.com",
+    //             target: "_blank",
+    //         },
+    //         {
+    //             label: "Github",
+    //             ariaLabel: "Github",
+    //             href: "https://github.com/ryan-tech",
+    //             target: "_blank",
+    //         },
+    //     ],
+    // },
+];
 ---
 
-<section id="title">
-    <h1>Ryan's Website</h1>
-</section>
-
-<section id="navbar">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/software">Software Engineering</a>
-    <a href="/roblox">Roblox</a>
-</section>
-
-<hr />
+<header id="header">
+    <CardNav
+        client:load
+        logo={"assets/astro.svg"}
+        logoAlt="Ryan's Logo"
+        items={Items}
+        baseColor="#fff"
+        menuColor="#000"
+        buttonBgColor="#111"
+        buttonTextColor="#fff"
+        ease="circ.out"
+    />
+</header>
 
 <style>
-    #title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* padding: 1rem; */
-        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-    }
+    #header {
+        width: 100%;
+        max-width: 800px;
 
-    #navbar {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        width: fit-content;
-        position: center;
-        top: 0;
-        left: 0;
         z-index: 100;
-        margin: 0 auto;
-        font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-        justify-content: center;
-        align-items: center;
+        height: fit-content;
     }
-
-    #navbar a {
-        text-decoration: none;
-        color: #000;
-        transition: color 0.2s ease;
-        padding: 1rem;
-    }
-
-    #navbar a:hover {
-        color: #4e4d4d;
-        text-decoration: underline;
-    }
-
 </style>
