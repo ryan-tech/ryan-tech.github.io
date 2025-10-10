@@ -1,0 +1,42 @@
+---
+import Navbar from '../components/Navbar.astro';
+import background from '../assets/background.svg';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<!-- Uncomment below once I have an icon -->
+		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+		<meta name="generator" content={Astro.generator} />
+		<title>Ryan's Website</title>
+	</head>
+	<Navbar />
+
+	<!-- <SplitText text="Welcome to my website!" tag="h1" className="text-2xl font-semibold text-center" delay={100} duration={0.6} ease="power3.out" splitType="chars" from={{ opacity: 0, y: 40 }} to={{ opacity: 1, y: 0 }} threshold={0.1} rootMargin="-100px" textAlign="center"></SplitText> -->
+	<img id="background" src={background.src} alt="" fetchpriority="high" />
+
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+	#background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		filter: blur(100px);
+	}
+</style>
