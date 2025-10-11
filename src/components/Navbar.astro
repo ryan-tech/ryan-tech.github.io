@@ -1,0 +1,68 @@
+---
+import CardNav from "./react/CardNav/CardNav.jsx";
+
+const Items = [
+    {
+        label: "Home",
+        bgColor: "#0D0716",
+        textColor: "#fff",
+        links: [
+            { label: "Home", ariaLabel: "Home", href: "/" },
+            { label: "About", ariaLabel: "About", href: "/about" },
+            { label: "Projects", ariaLabel: "Projects", href: "/projects" },
+        ],
+    },
+    // {
+    //     label: "Projects",
+    //     bgColor: "#170D27",
+    //     textColor: "#fff",
+    //     //   links: [
+    //     //     { label: "Featured", ariaLabel: "Featured Projects" },
+    //     //     { label: "Case Studies", ariaLabel: "Project Case Studies" }
+    //     //   ]
+    // },
+    // {
+    //     label: "Contact",
+    //     bgColor: "#271E37",
+    //     textColor: "#fff",
+    //     links: [
+    //         {
+    //             label: "Email",
+    //             ariaLabel: "Email me",
+    //             href: "mailto:ryankim.dev@gmail.com",
+    //             target: "_blank",
+    //         },
+    //         {
+    //             label: "Github",
+    //             ariaLabel: "Github",
+    //             href: "https://github.com/ryan-tech",
+    //             target: "_blank",
+    //         },
+    //     ],
+    // },
+];
+---
+
+<header id="header">
+    <CardNav
+        client:load
+        logo={"assets/astro.svg"}
+        logoAlt="Ryan's Logo"
+        items={Items}
+        baseColor="#fff"
+        menuColor="#000"
+        buttonBgColor="#111"
+        buttonTextColor="#fff"
+        ease="circ.out"
+    />
+</header>
+
+<style>
+    #header {
+        width: 100%;
+        max-width: 800px;
+
+        z-index: 100;
+        height: fit-content;
+    }
+</style>
